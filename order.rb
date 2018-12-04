@@ -3,11 +3,12 @@ class Order
 
   include ItemContainer
 
+
+
   def initialize
     @items = Array.new
-
   end
 
-  def place
+  def place;
   end
 end

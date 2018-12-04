@@ -1,6 +1,13 @@
 module ItemContainer
+
+  def self.min_price
+    100
+  end
+
   def add_item(item)
-    @items.push item
+    unless item.price < self.class.min_price
+      @items.push item
+    end
   end
 
   def remove_item(item)
