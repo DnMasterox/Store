@@ -26,6 +26,10 @@ class Item
     (@real_price - @real_price * self.class.discount) + tax
   end
 
+  def to_s
+   "#{self.name}:#{self.price}:#{self.weight}"
+  end
+
   private
 
   def tax
