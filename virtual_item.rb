@@ -1,2 +1,2 @@
-class VirtualItem
+class VirtualItem < Item
 end

@@ -1,2 +1,2 @@
-class RealItem
+class RealItem < Item
 end
