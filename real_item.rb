@@ -5,6 +5,8 @@ class RealItem < Item
     super
   end
 
+  attr_reader :weight
+
   def info
     yield(weight)
     super

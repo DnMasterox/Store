@@ -4,7 +4,6 @@ class Order
   include ItemContainer
 
 
-
   def initialize
     @items = Array.new
   end
