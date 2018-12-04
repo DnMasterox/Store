@@ -1,0 +1,2 @@
+class RealItem
+end
