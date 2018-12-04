@@ -2,7 +2,6 @@ class Item
 
   def initialize(options = {})
     @price = options[:price]
-    @weight = options[:weight]
     @name = options[:name]
   end
 
@@ -11,7 +10,6 @@ class Item
 
   def info
     yield(price)
-    yield(weight)
     yield(name)
   end
 end
