@@ -5,7 +5,7 @@ class Cart
   class ItemNotSupported < StandardError;
   end
 
-  UNSUPPORTED_ITEMS = [AntiqueItem, VirtualItem]
+  UNSUPPORTED_ITEMS = [AntiqueItem, VirtualItem].freeze
 
   def initialize(owner)
     @items = Array.new
@@ -32,5 +32,9 @@ class Cart
       puts "file #{@owner}_cart.txt created"
     end
   end
+
+  # def all_cars
+  #   # code here
+  # end
 
 end

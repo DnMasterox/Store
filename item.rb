@@ -27,7 +27,7 @@ class Item
   end
 
   def to_s
-   "#{self.name}:#{self.price}:#{self.weight}"
+    "#{name}:#{price}:#{weight}"
   end
 
   private
