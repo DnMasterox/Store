@@ -16,5 +16,22 @@ class StoreApplication
       end
       @instance ||= self # instance variable
     end
+
+    attr_accessor :name, :environment
+
+    def admin
+      @instance ||= Admin.new(&block)
+    end
+
+    class Admin
+      class << self
+        def new
+          unless @instance
+            yield
+          end
+          @instance ||= self
+        end
+      end
+    end
   end
 end
