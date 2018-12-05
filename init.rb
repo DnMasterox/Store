@@ -7,7 +7,7 @@ require_relative 'virtual_item'
 require_relative 'real_item'
 
 @items = []
-@items << RealItem.new(price: 101, weight: 101, name: 'car')
+@items << VirtualItem.new(price: 101, weight: 101, name: 'car')
 @items << RealItem.new(price: 100, weight: 101, name: 'kettle')
 @items << RealItem.new(price: 100, weight: 10, name: 'dishwasher')
 
