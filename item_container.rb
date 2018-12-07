@@ -10,7 +10,16 @@ module ItemContainer
 
   module InstanceMethods
 
+    def method_missing(method_name)
+      if method_name =~ /^all_/
+        show_all_items_with_name(method_name.to_s.sub(/^all_/, '').chomp('s'))
+      else
+        super
+      end
+    end
+
     def add_item(item)
+
       unless item.price < self.class.min_price
         @items.push item
       end
@@ -21,7 +30,7 @@ module ItemContainer
     end
 
     def validate
-      @items.each {|item| puts "Item has no price" if item.price.nil?}
+      @items.each {|item| puts 'Item has no price' if item.price.nil?}
     end
 
     def delete_invalid_items
@@ -30,6 +39,12 @@ module ItemContainer
 
     def count_valid_items
       @items.count {|item| item.price}
+    end
+
+    private
+
+    def show_all_items_with_name(n)
+      @items.map {|i| i if n == i.name}.delete_if {|i| i.nil?}
     end
 
   end
