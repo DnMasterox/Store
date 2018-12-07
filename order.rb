@@ -1,5 +1,5 @@
 class Order
-  attr_reader :items
+  attr_reader :items, :placed_at, :time_spent_on_sending_email
 
   include ItemContainer
 
@@ -16,6 +16,7 @@ class Order
   end
 
   def place
+    @placed_at = Time.now
     login = read_credentials_from_file[1]
     password = read_credentials_from_file[0]
     thread = Thread.new do # look to the delayed_job gem
@@ -35,5 +36,7 @@ admin page to see it!')
       puts '.'
       sleep 1
     end
+    sent_email_at = Time.now
+    @time_spent_on_sending_email = sent_email_at - @placed_at
   end
 end

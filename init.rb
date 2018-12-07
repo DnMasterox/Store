@@ -46,3 +46,5 @@ puts cart.all_kettles
 order = Order.new
 @items.each {|i| order.add_item(i)}
 order.place
+puts order.placed_at.strftime('%b %-d, %Y %H %M %S') # utc,to_i,to_s,to_f
+puts order.time_spent_on_sending_email
