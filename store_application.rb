@@ -6,6 +6,7 @@ class StoreApplication
         yield(self)
         puts 'loading files...'
         puts self.class
+        require 'pony'
         require_relative 'string'
         require_relative 'item_container'
         require_relative 'item'
