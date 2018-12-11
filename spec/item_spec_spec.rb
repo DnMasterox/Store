@@ -8,4 +8,9 @@ describe Item do
     item = Item.new('kettle', price: 200)
     expect item.price == 232
   end
+
+  it 'returns info about an object' do
+    item = Item.new('kettle', price: 200)
+    item.to_s.should == 'kettle:232.0'
+  end
 end
