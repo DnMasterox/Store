@@ -6,7 +6,6 @@ require_relative '../app/item_container'
 require_relative '../app/cart'
 
 describe Cart do
-
   describe 'managing items' do
     it 'adds items into the cart' do
       cart = Cart.new('Mykola')
