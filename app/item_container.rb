@@ -9,6 +9,7 @@ module ItemContainer
   end
 
   module InstanceMethods
+    attr_reader :items
 
     def method_missing(method_name)
       if method_name =~ /^all_/
