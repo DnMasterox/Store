@@ -17,6 +17,7 @@ class Order
 
   def place
     @placed_at = Time.now
+    # mock
     login = read_credentials_from_file[1]
     password = read_credentials_from_file[0]
     thread = Thread.new do # look to the delayed_job gem
