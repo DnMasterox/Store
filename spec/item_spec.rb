@@ -23,4 +23,8 @@ describe Item do
   it 'returns info about an object' do
     expect @item.to_s == 'kettle:232.0'
   end
+
+  it 'calculates tax' do
+    expect(@item.send(:tax)).not_to be_nil # check private method
+  end
 end
