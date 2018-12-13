@@ -10,6 +10,11 @@ class Item
     end
   end
 
+  def self.show_info_about(attr, block)
+    @@show_info_about ||= {} # if @@show_info_about=nil -> Array.new else nothing
+    @@show_info_about[attr] = block
+  end
+
   def initialize(name, options = {})
     @real_price = options[:price]
     @name = name
